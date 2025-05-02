@@ -10,6 +10,7 @@ public class Main {
         repo.addUser(new User(1, "Alex", "alex@gmail.com"));
         repo.addUser(new User(2, "Anton", "anton@gmail.com"));
 
+        System.out.println();
         System.out.println("ОТРИМАННЯ ВСІХ КОРИСТУВАЧІВ");
         findAllUsers(repo);
         System.out.println();
@@ -62,7 +63,7 @@ public class Main {
         allUsers.ifPresentOrElse(
                 list -> {
                     System.out.println("Кількість користувачів: " + list.size());
-                    System.out.println(list);
+                    list.forEach(System.out::println);
                 },
                 () -> System.out.println("Список користувачів порожній")
         );
